@@ -1,0 +1,42 @@
+class Solution(object):
+   def twoSum(self, nums, target):
+      """
+      :type nums: List[int]
+      :type target: int
+      :rtype: List[int]
+      """
+      required = {} #Dictionnaire
+      for i in range(len(nums)):
+        print('\napres if',required)
+        print('i :',i)
+        print('nums[i] : ',nums[i])
+        #print('range',range(len(nums)),'| len',len(nums),'| nums',nums)
+        print('if ',target-nums[i],'in',required)
+        if target - nums[i] in required:
+            print('vrai')
+            print('avant if',required,'')
+            
+            return [required[target - nums[i]],i]
+            
+        else:
+            print('faux')
+            print("avant else",required)
+            required[nums[i]]=i
+            print("apres else",required)
+            
+            
+a = [1,2,3,4,5]
+b = 9
+s = Solution()
+print('\n\nun')
+print(s.twoSum(a, b))
+
+a = [3,2,4]
+b = 6
+print('\n\ndeux')
+print(s.twoSum(a, b))
+
+a = [3,3]
+b = 6
+print('\n\ntrois')
+print(s.twoSum(a, b))
